@@ -1,0 +1,71 @@
+@use "sass:map";
+@import "../palette/light/light-palette";
+@import "../palette/dark/dark-palette";
+
+
+$theme-map: (
+  "light": (
+    --surface-lvl-0__100: $surface-lvl-0__100__light,
+    --header-background: $header-background__light,
+    --header-navigation-text-color__initial: $header-navigation-text-color__initial__light,
+    --header-navigation-text-color__hover: $header-navigation-text-color__hover__light,
+
+    --header-height: 70px,
+    --application-padding: 10rem,
+
+    --color-text-initial__100: $color-text-initial__100__light,
+    --theme-color: $theme-color
+  ),
+  "dark": (
+    --surface-lvl-0__100: $surface-lvl-0__100__dark,
+    --header-background: $header-background__dark,
+    --header-navigation-text-color__initial: $header-navigation-text-color__initial__dark,
+    --header-navigation-text-color__hover: $header-navigation-text-color__hover__dark,
+
+    --header-height: 70px,
+    --application-padding: 10rem,
+
+    --color-text-initial__100: $color-text-initial__100__dark,
+    --theme-color: $theme-color
+  )
+);
+
+:root {
+  @each $key, $value in map.get($theme-map, "light") {
+    #{$key}: $value;
+  }
+}
+
+[data-theme="light"] {
+  @each $key, $value in map.get($theme-map, "light") {
+    & {
+      #{$key}: $value;
+    }
+  }
+}
+
+[data-theme="dark"] {
+  @each $key, $value in map.get($theme-map, "dark") {
+    & {
+      #{$key}: $value;
+    }
+  }
+}
+
+.mat-mdc-menu-panel {
+  & {
+    background-color: var(--color-background-surface-lvl-2__100) !important;
+  }
+
+  .mat-mdc-menu-item {
+    & {
+      color: var(--color-text-surface-lvl-1__100) !important;
+    }
+
+    .mat-mdc-menu-item-text {
+      & {
+        font-family: FiraUPPB, sans-serif !important;
+      }
+    }
+  }
+}

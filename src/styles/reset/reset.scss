@@ -1,0 +1,48 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Poppins-Regular", serif;
+  color: var(--color-text-initial__100);
+}
+
+.material-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+button {
+  background: none;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+label {
+  font-family: 'Poppins-Regular', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  font-size: 16px;
+
+  color: #666666;
+}
