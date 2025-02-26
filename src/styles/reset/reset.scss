@@ -9,8 +9,7 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
-  font-family: "Poppins-Regular", serif;
-  color: var(--color-text-initial__100);
+  font-family: 'NotoSansGeorgian', sans-serif;
 }
 
 .material-icons {
@@ -28,21 +27,20 @@ button {
   outline: none;
   box-shadow: none;
   border: none;
-  color: #ffffff;
 }
 
 a {
   text-decoration: none;
-  color: #fff;
 }
 
 label {
-  font-family: 'Poppins-Regular', sans-serif;
+  font-family: 'NotoSansGeorgian', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
   line-height: 24px;
   font-size: 16px;
+}
 
-  color: #666666;
+.mat-icon {
+  margin: 0 !important;
 }

@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component, inject} from '@angular/core';
+import {ThemeService} from './shared/shared/services';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'examples';
+  private themeService = inject(ThemeService)
+
+  constructor() {
+    this.themeService.setInitialTheme()
+  }
 }

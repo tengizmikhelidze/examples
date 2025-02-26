@@ -1,70 +1,102 @@
 @use "sass:map";
-@import "../palette/light/light-palette";
-@import "../palette/dark/dark-palette";
-
+@use "../palette/red/red-palette" as *;
+@use "../palette/blue/blue-palette" as *;
+@use "../palette/green/green-palette" as *;
+@use "../palette/yellow/yellow-palette" as *;
+@use "../palette/pink/pink-palette" as *;
 
 $theme-map: (
-  "light": (
-    --surface-lvl-0__100: $surface-lvl-0__100__light,
-    --header-background: $header-background__light,
-    --header-navigation-text-color__initial: $header-navigation-text-color__initial__light,
-    --header-navigation-text-color__hover: $header-navigation-text-color__hover__light,
+  "red": (
+    --surface-lvl-0__100: $surface-lvl-0__100__red,
+    --header-background: $header-background__red,
+    --color-main__100: $color-main__100__red,
+    --color-main-green__100: $color-main-green__100__red,
+    --color-main-blue__100: $color-main-blue__100__red,
+    --color-main-red__100: $color-main-red__100__red,
+    --color-main-pink__100: $color-main-pink__100__red,
+    --color-main-yellow__100: $color-main-yellow__100__red,
+    --color-label-initial__100: $color-label-initial__100__red,
+    --color-text-button-initial__100: $color-text-button-initial__100__red,
 
-    --header-height: 70px,
-    --application-padding: 10rem,
-
-    --color-text-initial__100: $color-text-initial__100__light,
-    --theme-color: $theme-color
+    --mat-menu-container-color: $surface-lvl-1__100__red,
+    --mdc-filled-button-container-color: $color-main__100__red,
+    --mdc-filled-button-label-text-color: $color-text-button-initial__100__red
   ),
-  "dark": (
-    --surface-lvl-0__100: $surface-lvl-0__100__dark,
-    --header-background: $header-background__dark,
-    --header-navigation-text-color__initial: $header-navigation-text-color__initial__dark,
-    --header-navigation-text-color__hover: $header-navigation-text-color__hover__dark,
+  "blue": (
+    --surface-lvl-0__100: $surface-lvl-0__100__blue,
+    --surface-lvl-1__100: $surface-lvl-1__100__blue,
+    --header-background: $header-background__blue,
+    --color-main__100: $color-main__100__blue,
+    --color-main-green__100: $color-main-green__100__blue,
+    --color-main-red__100: $color-main-red__100__blue,
+    --color-main-blue__100: $color-main-blue__100__blue,
+    --color-main-pink__100: $color-main-pink__100__blue,
+    --color-main-yellow__100: $color-main-yellow__100__blue,
+    --color-label-initial__100: $color-label-initial__100__blue,
+    --color-text-button-initial__100: $color-text-button-initial__100__blue,
 
-    --header-height: 70px,
-    --application-padding: 10rem,
+    --mat-menu-container-color: $surface-lvl-1__100__blue,
+    --mdc-filled-button-container-color: $color-main__100__blue,
+    --mdc-filled-button-label-text-color: $color-text-button-initial__100__blue
+  ),
+  "green": (
+    --surface-lvl-0__100: $surface-lvl-0__100__green,
+    --header-background: $header-background__green,
+    --color-main__100: $color-main__100__green,
+    --color-main-green__100: $color-main-green__100__green,
+    --color-main-red__100: $color-main-red__100__green,
+    --color-main-blue__100: $color-main-blue__100__green,
+    --color-main-pink__100: $color-main-pink__100__green,
+    --color-main-yellow__100: $color-main-yellow__100__green,
+    --color-label-initial__100: $color-label-initial__100__green,
 
-    --color-text-initial__100: $color-text-initial__100__dark,
-    --theme-color: $theme-color
+--mat-menu-container-color: $surface-lvl-1__100__green,
+--mdc-filled-button-container-color: $color-main__100__green,
+--mdc-filled-button-label-text-color: $color-text-button-initial__100__green
+  ),
+  "yellow": (
+    --surface-lvl-0__100: $surface-lvl-0__100__yellow,
+    --header-background: $header-background__yellow,
+    --color-main__100: $color-main__100__yellow,
+    --color-main-green__100: $color-main-green__100__yellow,
+    --color-main-red__100: $color-main-red__100__yellow,
+    --color-main-blue__100: $color-main-blue__100__yellow,
+    --color-main-pink__100: $color-main-pink__100__yellow,
+    --color-main-yellow__100: $color-main-yellow__100__yellow,
+    --color-label-initial__100: $color-label-initial__100__yellow,
+
+--mat-menu-container-color: $surface-lvl-1__100__yellow,
+--mdc-filled-button-container-color: $color-main__100__yellow,
+--mdc-filled-button-label-text-color: $color-text-button-initial__100__yellow
+  ),
+  "pink": (
+    --surface-lvl-0__100: $surface-lvl-0__100__pink,
+    --header-background: $header-background__pink,
+    --color-main__100: $color-main__100__pink,
+    --color-main-green__100: $color-main-green__100__pink,
+    --color-main-red__100: $color-main-red__100__pink,
+    --color-main-blue__100: $color-main-blue__100__pink,
+    --color-main-pink__100: $color-main-pink__100__pink,
+    --color-main-yellow__100: $color-main-yellow__100__pink,
+    --color-label-initial__100: $color-label-initial__100__pink,
+
+--mat-menu-container-color: $surface-lvl-1__100__pink,
+--mdc-filled-button-container-color: $color-main__100__pink,
+--mdc-filled-button-label-text-color: $color-text-button-initial__100__pink
   )
 );
 
 :root {
-  @each $key, $value in map.get($theme-map, "light") {
+  @each $key, $value in map.get($theme-map, "red") {
     #{$key}: $value;
   }
 }
 
-[data-theme="light"] {
-  @each $key, $value in map.get($theme-map, "light") {
-    & {
-      #{$key}: $value;
-    }
-  }
-}
-
-[data-theme="dark"] {
-  @each $key, $value in map.get($theme-map, "dark") {
-    & {
-      #{$key}: $value;
-    }
-  }
-}
-
-.mat-mdc-menu-panel {
-  & {
-    background-color: var(--color-background-surface-lvl-2__100) !important;
-  }
-
-  .mat-mdc-menu-item {
-    & {
-      color: var(--color-text-surface-lvl-1__100) !important;
-    }
-
-    .mat-mdc-menu-item-text {
+@each $name, $theme in $theme-map {
+  [data-theme="#{$name}"] {
+    @each $key, $value in map.get($theme-map, "#{$name}") {
       & {
-        font-family: FiraUPPB, sans-serif !important;
+        #{$key}: $value;
       }
     }
   }

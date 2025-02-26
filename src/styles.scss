@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@use "styles/theming/theme" as *;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'NotoSansGeorgian', sans-serif; background-color: var(--surface-lvl-0__100);}
+
