@@ -1,9 +1,10 @@
-@for $i from 1 through 9 {
-  @font-face {
-    font-family: 'NotoSansGeorgian';
-    src: url('/src/assets/fonts/NotoSansGeorgian-#{1}00.ttf') format('tff');
-    font-weight: #{1}00;
-  }
+@font-face {
+  font-family: Georgian;
+  src: url('/assets/fonts/georgian.otf') format('truetype');
 }
 
+@font-face {
+  font-family: GeorgianMtavruli;
+  src: url('/assets/fonts/georgian_mtavruli.otf') format('truetype');
+}
 
