@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {ThemeService} from './shared/shared/services';
 import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
@@ -10,7 +10,7 @@ import {filter, map, Observable, of, switchMap} from 'rxjs';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   private themeService = inject(ThemeService)
   private route = inject(ActivatedRoute)
   private router = inject(Router)
